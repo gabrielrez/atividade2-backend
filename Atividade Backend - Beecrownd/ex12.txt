@@ -1,0 +1,19 @@
+<?php
+function mdc($a, $b) {
+    while ($b != 0) {
+        $r = $a % $b;
+        $a = $b;
+        $b = $r;
+    }
+    return $a;
+}
+function maxPilha($f1, $f2) {
+    return mdc($f1, $f2);
+}
+$n = intval(trim(fgets(STDIN)));
+for ($i = 0; $i < $n; $i++) {
+    list($f1, $f2) = array_map('intval', explode(' ', trim(fgets(STDIN))));
+    $result = maxPilha($f1, $f2);
+    echo "$result\n";
+}
+?>

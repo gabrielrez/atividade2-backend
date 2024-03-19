@@ -1,0 +1,26 @@
+<?php
+function sortValues($values) {
+    $evens = [];
+    $odds = [];
+    foreach ($values as $value) {
+        if ($value % 2 == 0) {
+            $evens[] = $value;
+        } else {
+            $odds[] = $value;
+        }
+    }
+    sort($evens);
+    rsort($odds);
+    return array_merge($evens, $odds);
+}
+$n = intval(trim(fgets(STDIN)));
+$values = [];
+for ($i = 0; $i < $n; $i++) {
+    $value = intval(trim(fgets(STDIN)));
+    $values[] = $value;
+}
+$sortedValues = sortValues($values);
+foreach ($sortedValues as $value) {
+    echo "$value\n";
+}
+?>

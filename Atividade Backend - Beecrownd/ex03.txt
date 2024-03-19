@@ -1,0 +1,8 @@
+<?php
+fscanf(STDIN, "%d", $x);
+fscanf(STDIN, "%d", $y);
+for($i = $x; $i < $y; $i++){
+    if($i % 5 == 2 || $i % 5 == 3){
+     echo "$i\n";   
+    }
+}

@@ -1,0 +1,21 @@
+<?php
+function calcularNotas($valor) {
+    $notas = [100, 50, 20, 10, 5, 2, 1];
+    $quantidades = [];
+    $i = 0;
+    foreach ($notas as $nota) {
+        $quantidade = intval($valor / $nota);
+        $quantidades[$i] = $quantidade;
+        $i++;
+        $valor -= $quantidade * $nota;
+    }    
+    return $quantidades;
+}
+fscanf(STDIN, "%d", $valor);
+$notas = calcularNotas($valor);
+$i = 0;
+foreach($notas as $nota){
+    echo $notas[$i] . " nota(s) de R$ " . $nota . ",00\n";
+    $i++;
+}
+?>

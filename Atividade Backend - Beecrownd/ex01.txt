@@ -1,0 +1,11 @@
+<?php
+function maior($a, $b){
+    return ($a + $b + abs($a - $b)) / 2;
+}
+function maiorTotal($a, $b, $c){
+    return maior(maior($a, $b), $c);
+}
+fscanf(STDIN, "%d %d %d", $n1, $n2, $n3);
+$maior = maiorTotal($n1, $n2, $n3);
+echo "$maior eh o maior";
+?>
